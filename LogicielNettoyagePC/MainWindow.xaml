@@ -8,6 +8,16 @@
         x:Name="fenetre"
         Title="Logiciel Nettoyage de Raúl Toache" Height="700" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/icon.ico">
     <Grid>
-        <Button x:Name="button" Content="Mon Button" HorizontalAlignment="Center" VerticalAlignment="Center" Height="78" Width="100" Background="#FF35B5EC" Click="button_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="175" Stroke="Black" VerticalAlignment="Top" Width="1000" Fill="#FF007791" StrokeThickness="0"/>
+        <Rectangle HorizontalAlignment="Center" Height="10" Stroke="Black" VerticalAlignment="Top" Width="1000" Fill="#FFF9F9F9" Margin="0,175,0,0" StrokeThickness="0"/>
+        <!-- Titre -->
+        <Label x:Name="titre" Content="Analyse du PC nécessaire" HorizontalAlignment="Left" Margin="20,26,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="40" FontWeight="Bold"/>
+        <!-- SS Titre -->
+        <Label x:Name="label_00" Content="Espace à nettoyer : " HorizontalAlignment="Left" Margin="20,88,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="label_01" Content="Dernière analyse : " HorizontalAlignment="Left" Margin="20,126,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="22" FontWeight="Bold"/>
+        <!-- Valeurs -->
+        <Label x:Name="date" Content="Jamais" HorizontalAlignment="Left" Margin="226,126,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
+        <Label x:Name="espace" Content="??? Mb" HorizontalAlignment="Left" Margin="226,88,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
+        <Button x:Name="button" Content="ANALYSER" HorizontalAlignment="Right" Margin="661,49,20,0" VerticalAlignment="Top" Width="291" Height="69" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26"/>
     </Grid>
 </Window>

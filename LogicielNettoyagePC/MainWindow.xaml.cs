@@ -20,10 +20,5 @@ namespace LogicielNettoyagePC
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            fenetre.Close();
-        }
     }
 }
