@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,19 +18,100 @@ namespace LogicielNettoyagePC
     /// </summary>
     public partial class MainWindow : Window
     {
+        public DirectoryInfo winTemp;
+        public DirectoryInfo appTemp;
+
         public MainWindow()
         {
             InitializeComponent();
+            winTemp = new DirectoryInfo(@"C:\Windows\Temp");
+            appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
         }
 
-        private void analyse_Click(object sender, RoutedEventArgs e)
+        // Calculates a folder's size
+        public long DirSize(DirectoryInfo dir)
         {
+            return dir.GetFiles().Sum(fi => fi.Length) + dir.GetDirectories().Sum(di => DirSize(di));
+        }
 
+        // Clear a folder
+        public void ClearTempData(DirectoryInfo di)
+        {
+            foreach (FileInfo file in di.GetFiles())
+            {
+                try
+                {
+                    file.Delete();
+                    Console.WriteLine(file.FullName);
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+            }
+
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                try
+                {
+                    dir.Delete(true);
+                    Console.WriteLine(dir.FullName);
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+            }
+        }
+
+        private void scan_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Starting analysis...");
+            long totalSize = 0;
+
+            try
+            {
+                totalSize += DirSize(winTemp) / 1_000_000;
+                totalSize += DirSize(appTemp) / 1_000_000;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Impossible to analyze these folders: " + ex.Message);
+            }
+
+            space.Content = totalSize + " MB";
+            title.Content = "Analyze done!";
+            date.Content = DateTime.Today;
         }
 
         private void clean_Click(object sender, RoutedEventArgs e)
         {
+            Console.WriteLine("Cleaning...");
+            clean.Content = "CLEANING";
 
+            Clipboard.Clear();
+
+            try
+            {
+                ClearTempData(winTemp);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            try
+            {
+                ClearTempData(appTemp);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            clean.Content = "FINISHED CLEANING";
+            title.Content = "Finished cleaning";
+            space.Content = "0 MB";
         }
 
         private void history_Click(object sender, RoutedEventArgs e)
