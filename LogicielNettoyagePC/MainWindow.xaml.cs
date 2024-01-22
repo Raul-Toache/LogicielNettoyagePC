@@ -86,8 +86,11 @@ namespace LogicielNettoyagePC
 
         private void clean_Click(object sender, RoutedEventArgs e)
         {
+            Button button = (Button)sender;
+            TextBlock textBlock = (TextBlock)((StackPanel)button.Content).Children[1];
+
             Console.WriteLine("Cleaning...");
-            clean.Content = "CLEANING";
+            textBlock.Text = "CLEANING";
 
             Clipboard.Clear();
 
@@ -109,7 +112,7 @@ namespace LogicielNettoyagePC
                 Console.WriteLine("Error: " + ex.Message);
             }
 
-            clean.Content = "FINISHED CLEANING";
+            textBlock.Text = "FINISHED CLEANING";
             title.Content = "Finished cleaning";
             space.Content = "0 MB";
         }

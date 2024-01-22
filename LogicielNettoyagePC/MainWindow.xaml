@@ -20,20 +20,36 @@
         <Label x:Name="space" Content="??? MB" HorizontalAlignment="Left" Margin="226,88,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
         <Button x:Name="scan" Content="SCAN" HorizontalAlignment="Right" Margin="661,49,20,0" VerticalAlignment="Top" Width="291" Height="69" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="scan_Click"/>
         <!-- Content -->
-        <Button x:Name="clean" Content="&#xD;&#xA;&#xD;&#xA;CLEAN" HorizontalAlignment="Left" Margin="70,195,0,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="clean_Click" Grid.RowSpan="1"/>
-        <Image x:Name="cleanicon" HorizontalAlignment="Left" Height="65" Margin="238,225,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-balayer-100.png" IsHitTestVisible="False"/>
-        <Button x:Name="udpate" Content="&#xD;&#xA;&#xD;&#xA;UPDATE" HorizontalAlignment="Left" Margin="70,385,0,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="udpate_Click"/>
-        <Image x:Name="updateicon" HorizontalAlignment="Left" Height="65" Margin="233,410,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-mises-à-jour-disponibles-100.png" IsHitTestVisible="False"/>
-        <Button x:Name="history" Content="&#xD;&#xA;&#xD;&#xA;HISTORY" HorizontalAlignment="Right" Margin="0,195,70,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="history_Click"/>
-        <Image x:Name="historyicon" HorizontalAlignment="Left" Height="65" Margin="689,225,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-liste-100.png" IsHitTestVisible="False"/>
-        <Button x:Name="website" Content="&#xD;&#xA;&#xD;&#xA;WEBSITE" HorizontalAlignment="Right" Margin="0,385,70,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="website_Click"/>
-        <Image x:Name="websiteicon" HorizontalAlignment="Left" Height="65" Margin="689,410,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-www-100.png" IsHitTestVisible="False"/>
+        <Button x:Name="clean" HorizontalAlignment="Left" Margin="70,195,0,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="clean_Click" Grid.RowSpan="1">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="cleanicon" HorizontalAlignment="Center" Height="65" VerticalAlignment="Top" Width="65" Source="/icons8-balayer-100.png" IsHitTestVisible="False"/>
+                <TextBlock Text="CLEAN"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="udpate" HorizontalAlignment="Left" Margin="70,385,0,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="udpate_Click">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="updateicon" HorizontalAlignment="Center" Height="65" VerticalAlignment="Top" Width="65" Source="/icons8-mises-à-jour-disponibles-100.png" IsHitTestVisible="False"/>
+                <TextBlock Text="UPDATE" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="history" HorizontalAlignment="Right" Margin="0,195,70,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="history_Click">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="historyicon" HorizontalAlignment="Center" Height="65" VerticalAlignment="Top" Width="65" Source="/icons8-liste-100.png" IsHitTestVisible="False"/>
+                <TextBlock Text="HISTORY"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="website" HorizontalAlignment="Right" Margin="0,385,70,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="website_Click">
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="websiteicon" HorizontalAlignment="Center" Height="65" VerticalAlignment="Top" Width="65" Source="/icons8-www-100.png" IsHitTestVisible="False"/>
+                <TextBlock Text="WEBSITE"/>
+            </StackPanel>
+        </Button>
         <!-- Footer -->
         <Rectangle HorizontalAlignment="Center" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="1000" Fill="#FFF9F9F9" Margin="0,0,0,0" StrokeThickness="0"/>
         <Label x:Name="copyright" Content="Copyright 2024 - Raúl Toache" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial" FontSize="20" FontWeight="Light" Width="274"/>
         <Rectangle HorizontalAlignment="Center" Height="45" Stroke="Black" VerticalAlignment="Bottom" Width="1000" Fill="#FFE09797" Margin="0,0,0,0" StrokeThickness="0" Visibility="Hidden"/>
         <Label x:Name="actu" Content="Copyright 2024 - Raúl Toache" HorizontalAlignment="Center" Margin="0,645,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Arial" FontSize="20" FontWeight="Light" Width="274" Visibility="Hidden"/>
-        
+
 
     </Grid>
 </Window>
