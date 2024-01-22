@@ -10,10 +10,26 @@
 
   <ItemGroup>
     <None Remove="icon.ico" />
+    <None Remove="icons8-balayer-100.png" />
+    <None Remove="icons8-liste-100.png" />
+    <None Remove="icons8-mises-à-jour-disponibles-100.png" />
+    <None Remove="icons8-www-100.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="icon.ico" />
+    <Resource Include="icons8-balayer-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons8-liste-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons8-mises-à-jour-disponibles-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons8-www-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -6,18 +6,34 @@
         xmlns:local="clr-namespace:LogicielNettoyagePC"
         mc:Ignorable="d"
         x:Name="fenetre"
-        Title="Logiciel Nettoyage de Raúl Toache" Height="700" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/icon.ico">
+        Title="PC Cleaning Software by Raúl Toache" Height="700" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/icon.ico">
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="175" Stroke="Black" VerticalAlignment="Top" Width="1000" Fill="#FF007791" StrokeThickness="0"/>
         <Rectangle HorizontalAlignment="Center" Height="10" Stroke="Black" VerticalAlignment="Top" Width="1000" Fill="#FFF9F9F9" Margin="0,175,0,0" StrokeThickness="0"/>
         <!-- Titre -->
-        <Label x:Name="titre" Content="Analyse du PC nécessaire" HorizontalAlignment="Left" Margin="20,26,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="40" FontWeight="Bold"/>
+        <Label x:Name="title" Content="Need to Scan the Computer" HorizontalAlignment="Left" Margin="20,26,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="40" FontWeight="Bold"/>
         <!-- SS Titre -->
-        <Label x:Name="label_00" Content="Espace à nettoyer : " HorizontalAlignment="Left" Margin="20,88,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="22" FontWeight="Bold"/>
-        <Label x:Name="label_01" Content="Dernière analyse : " HorizontalAlignment="Left" Margin="20,126,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="label_00" Content="Space to clean: " HorizontalAlignment="Left" Margin="20,88,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="22" FontWeight="Bold"/>
+        <Label x:Name="label_01" Content="Last scan: " HorizontalAlignment="Left" Margin="20,126,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="22" FontWeight="Bold"/>
         <!-- Valeurs -->
-        <Label x:Name="date" Content="Jamais" HorizontalAlignment="Left" Margin="226,126,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
-        <Label x:Name="espace" Content="??? Mb" HorizontalAlignment="Left" Margin="226,88,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
-        <Button x:Name="button" Content="ANALYSER" HorizontalAlignment="Right" Margin="661,49,20,0" VerticalAlignment="Top" Width="291" Height="69" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26"/>
+        <Label x:Name="date" Content="Never" HorizontalAlignment="Left" Margin="226,126,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
+        <Label x:Name="space" Content="??? MB" HorizontalAlignment="Left" Margin="226,88,0,0" VerticalAlignment="Top" Foreground="#CCFFFFFF" FontFamily="Arial" FontSize="22" FontWeight="Light"/>
+        <Button x:Name="analyse" Content="SCAN" HorizontalAlignment="Right" Margin="661,49,20,0" VerticalAlignment="Top" Width="291" Height="69" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="analyse_Click"/>
+        <!-- Content -->
+        <Button x:Name="clean" Content="&#xD;&#xA;&#xD;&#xA;CLEAN" HorizontalAlignment="Left" Margin="70,195,0,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="clean_Click"/>
+        <Image x:Name="cleanicon" HorizontalAlignment="Left" Height="65" Margin="238,225,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-balayer-100.png" IsHitTestVisible="False"/>
+        <Button x:Name="udpate" Content="&#xD;&#xA;&#xD;&#xA;UPDATE" HorizontalAlignment="Left" Margin="70,385,0,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="udpate_Click"/>
+        <Image x:Name="updateicon" HorizontalAlignment="Left" Height="65" Margin="233,410,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-mises-à-jour-disponibles-100.png" IsHitTestVisible="False"/>
+        <Button x:Name="history" Content="&#xD;&#xA;&#xD;&#xA;HISTORY" HorizontalAlignment="Right" Margin="0,195,70,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="history_Click"/>
+        <Image x:Name="historyicon" HorizontalAlignment="Left" Height="65" Margin="689,225,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-liste-100.png" IsHitTestVisible="False"/>
+        <Button x:Name="website" Content="&#xD;&#xA;&#xD;&#xA;WEBSITE" HorizontalAlignment="Right" Margin="0,385,70,0" VerticalAlignment="Top" Width="400" Height="180" Background="#FF007791" BorderThickness="5,5,5,5" BorderBrush="White" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="26" Click="website_Click"/>
+        <Image x:Name="websiteicon" HorizontalAlignment="Left" Height="65" Margin="689,410,0,0" VerticalAlignment="Top" Width="65" Source="/icons8-www-100.png" IsHitTestVisible="False"/>
+        <!-- Footer -->
+        <Rectangle HorizontalAlignment="Center" Height="90" Stroke="Black" VerticalAlignment="Bottom" Width="1000" Fill="#FFF9F9F9" Margin="0,0,0,0" StrokeThickness="0"/>
+        <Label x:Name="copyright" Content="Copyright 2024 - Raúl Toache" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Foreground="Black" FontFamily="Arial" FontSize="20" FontWeight="Light" Width="274"/>
+        <Rectangle HorizontalAlignment="Center" Height="45" Stroke="Black" VerticalAlignment="Bottom" Width="1000" Fill="#FFE09797" Margin="0,0,0,0" StrokeThickness="0" Visibility="Hidden"/>
+        <Label x:Name="actu" Content="Copyright 2024 - Raúl Toache" HorizontalAlignment="Center" Margin="0,645,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Arial" FontSize="20" FontWeight="Light" Width="274" Visibility="Hidden"/>
+        
+
     </Grid>
 </Window>
